@@ -12,4 +12,5 @@ int power2(int n){
 } 
 int main(){
 	cout<<power2(3)<<endl;
+	return 0;
 }
