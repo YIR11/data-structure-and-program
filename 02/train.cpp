@@ -54,17 +54,17 @@ int main(){
 	}
 
 	int l = 0;
-	int* str = new int[2*c1];
+	int* str = new int[2*c1];   //记录操作 
 	
 	for(int i = 0;i<c1;i++){
-	    if (aft[i]>=S1.top()){
+	    if (aft[i]>=S1.top()){         //元素尚未入S2，需要入栈 
 	    	int j = S1.top();
 			for(;j<=aft[i];j++){
 				S2.push(S1.pop());	
 				str[l] = 1;
 				l++;
 			}
-			if(!S2.full()){
+			if(!S2.full()){     //判满 
 			   S2.pop();
 			   str[l]=2;
 			   l++;
@@ -76,7 +76,7 @@ int main(){
 		     }
 		}
 		else{
-			if(aft[i]==S2.top()){
+			if(aft[i]==S2.top()){    //元素在S2中，只能为栈顶，否则出不去 
 				S2.pop();
 				str[l]=2;
 				l++;
